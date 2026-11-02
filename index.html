@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MathwithMe | Personalized Math Coaching in Paratwada</title>
+<meta name="description" content="MathwithMe offers personalized mathematics coaching in Paratwada for Class 8, 9, and 10 students. Morning batches, progress dashboard, and free demo class." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#101828;
+    --muted:#5b6474;
+    --bg:#f6f8fc;
+    --card:#ffffff;
+    --line:#e3e8f0;
+    --primary:#1d3fb8;
+    --primary-dark:#16307f;
+    --teal:#0f9d8f;
+    --amber:#f5a524;
+    --soft-blue:#e8eeff;
+    --soft-teal:#e3f7f4;
+    --radius:18px;
+    --shadow:0 18px 45px rgba(16,24,40,.10);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Plus Jakarta Sans",system-ui,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.6;
+  }
+  img{max-width:100%;display:block}
+  a{text-decoration:none;color:inherit}
+  button{font:inherit;cursor:pointer;border:none}
+  input,select,textarea{font:inherit}
+
+  .container{
+    width:min(1180px,92%);
+    margin-inline:auto;
+  }
+
+  /* Header */
+  .header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(246,248,252,.88);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding:16px 0;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:800;
+    font-size:1.15rem;
+  }
+  .logo-mark{
+    width:42px;height:42px;
+    border-radius:13px;
+    display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--primary),var(--teal));
+    color:white;
+    font-weight:800;
+    box-shadow:0 8px 20px rgba(29,63,184,.25);
+  }
+  .nav-links{
+    display:flex;
+    align-items:center;
+    gap:24px;
+    font-weight:600;
+    font-size:.95rem;
+  }
+  .nav-links a{
+    color:var(--muted);
+    transition:.25s;
+  }
+  .nav-links a:hover{color:var(--primary)}
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:12px 22px;
+    border-radius:999px;
+    font-weight:700;
+    transition:.25s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:var(--primary);
+    color:white;
+    box-shadow:0 10px 24px rgba(29,63,184,.25);
+  }
+  .btn-primary:hover{
+    background:var(--primary-dark);
+    transform:translateY(-2px);
+  }
+  .btn-ghost{
+    border:1.5px solid var(--line);
+    background:white;
+    color:var(--ink);
+  }
+  .btn-ghost:hover{
+    border-color:var(--primary);
+    color:var(--primary);
+  }
+  .menu-btn{
+    display:none;
+    background:white;
+    border:1px solid var(--line);
+    width:44px;height:44px;
+    border-radius:12px;
+    font-size:1.2rem;
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    padding:78px 0 82px;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    width:520px;height:520px;
+    right:-160px;top:-180px;
+    background:radial-gradient(circle,rgba(15,157,143,.18),transparent 65%);
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    width:430px;height:430px;
+    left:-140px;bottom:-180px;
+    background:radial-gradient(circle,rgba(29,63,184,.16),transparent 65%);
+  }
+  .hero-grid{
+    position:relative;
+    z-index:1;
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:56px;
+    align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--soft-blue);
+    color:var(--primary);
+    padding:8px 14px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:.82rem;
+  }
+  h1{
+    font-family:"Fraunces",serif;
+    font-size:clamp(2.5rem,5.2vw,4.2rem);
+    line-height:1.06;
+    letter-spacing:-1px;
+    margin:20px 0 18px;
+  }
+  .gradient-text{
+    background:linear-gradient(100deg,var(--primary),var(--teal));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .hero p{
+    color:var(--muted);
+    font-size:1.08rem;
+    max-width:560px;
+  }
+  .hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-top:30px;
+  }
+  .hero-stats{
+    display:flex;
+    flex-wrap:wrap;
+    gap:34px;
+    margin-top:44px;
+  }
+  .stat b{
+    display:block;
+    font-size:1.7rem;
+    line-height:1;
+  }
+  .stat span{
+    color:var(--muted);
+    font-size:.88rem;
+  }
+
+  .hero-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:26px;
+    padding:26px;
+    box-shadow:var(--shadow);
+    animation:float 6s ease-in-out infinite;
+  }
+  .progress-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+  }
+  .progress-head h3{font-size:1.05rem}
+  .badge{
+    background:var(--soft-teal);
+    color:var(--teal);
+    font-size:.75rem;
+    font-weight:700;
+    padding:6px 11px;
+    border-radius:999px;
+  }
+  .subject{margin-bottom:18px}
+  .subject-top{
+    display:flex;
+    justify-content:space-between;
+    font-weight:600;
+    font-size:.92rem;
+    margin-bottom:8px;
+  }
+  .bar{
+    height:10px;
+    background:#eef1f7;
+    border-radius:999px;
+    overflow:hidden;
+  }
+  .bar span{
+    display:block;
+    height:100%;
+    width:0;
+    border-radius:999px;
+    background:linear-gradient(90deg,var(--primary),var(--teal));
+    animation:grow 1.6s ease forwards;
+  }
+  .mini-cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-top:22px;
+  }
+  .mini-card{
+    background:var(--bg);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:14px;
+    text-align:center;
+  }
+  .mini-card b{display:block;font-size:1.15rem}
+  .mini-card span{font-size:.76rem;color:var(--muted)}
+
+  /* Sections */
+  section{padding:82px 0}
+  .section-head{
+    max-width:700px;
+    margin:0 auto 48px;
+    text-align:center;
+  }
+  .section-head h2{
+    font-family:"Fraunces",serif;
+    font-size:clamp(1.9rem,3.4vw,2.7rem);
+    letter-spacing:-.5px;
+    margin-bottom:12px;
+  }
+  .section-head p{color:var(--muted)}
+
+  .grid-3{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:28px;
+    transition:.3s ease;
+  }
+  .card:hover{
+    transform:translateY(-6px);
+    box-shadow:var(--shadow);
+    border-color:#cdd8ee;
+  }
+  .icon{
+    width:52px;height:52px;
+    display:grid;place-items:center;
+    border-radius:16px;
+    font-size:1.35rem;
+    margin-bottom:18px;
+  }
+  .blue{background:var(--soft-blue)}
+  .teal{background:var(--soft-teal)}
+  .amber{background:#fff3d6}
+  .card h3{margin-bottom:10px}
+  .card p{color:var(--muted);font-size:.95rem}
+
+  /* Courses */
+  .courses{
+    background:white;
+    border-block:1px solid var(--line);
+  }
+  .course{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    align-items:center;
+    padding:24px;
+    background:var(--bg);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    transition:.25s;
+  }
+  .course:hover{
+    background:white;
+    border-color:var(--primary);
+    transform:translateY(-3px);
+  }
+  .course h3{font-size:1.05rem}
+  .course p{color:var(--muted);font-size:.9rem}
+  .price{
+    font-weight:800;
+    color:var(--primary);
+    white-space:nowrap;
+  }
+  .course-list{display:grid;gap:14px}
+  .timing-note{
+    margin-top:22px;
+    background:var(--soft-blue);
+    border:1px solid #d6e0fb;
+    color:var(--primary-dark);
+    padding:18px 22px;
+    border-radius:16px;
+    font-weight:600;
+    text-align:center;
+  }
+  .timing-note a{
+    color:var(--primary);
+    font-weight:800;
+  }
+
+  /* Results */
+  .results-strip{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+    margin-bottom:44px;
+  }
+  .result-card{
+    background:linear-gradient(135deg,#ffffff,#f4f7ff);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:24px;
+    text-align:center;
+    transition:.3s ease;
+  }
+  .result-card:hover{
+    transform:translateY(-5px);
+    box-shadow:var(--shadow);
+  }
+  .result-card b{
+    display:block;
+    font-size:2rem;
+    line-height:1;
+    background:linear-gradient(100deg,var(--primary),var(--teal));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .result-card span{
+    display:block;
+    margin-top:8px;
+    color:var(--muted);
+    font-size:.88rem;
+  }
+  .testimonial-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+  }
+  .testimonial{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:28px;
+    transition:.3s ease;
+  }
+  .testimonial:hover{
+    transform:translateY(-6px);
+    box-shadow:var(--shadow);
+    border-color:#cdd8ee;
+  }
+  .testimonial blockquote{
+    margin:14px 0 20px;
+    color:#2b3446;
+    font-size:1rem;
+  }
+  .stars{
+    color:var(--amber);
+    font-size:1.05rem;
+    letter-spacing:2px;
+  }
+  .testimonial-user{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding-top:18px;
+    border-top:1px solid var(--line);
+  }
+  .avatar{
+    width:46px;height:46px;
+    border-radius:50%;
+    display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--primary),var(--teal));
+    color:white;
+    font-weight:800;
+  }
+  .avatar.small{
+    width:42px;
+    height:42px;
+    font-size:.95rem;
+  }
+  .testimonial-user small,
+  .student small{
+    display:block;
+    color:var(--muted);
+  }
+
+  /* Dashboard */
+  .dashboard{
+    background:#0d1330;
+    color:white;
+  }
+  .dashboard .section-head h2,
+  .dashboard .section-head p{color:white}
+  .dashboard .section-head p{color:#aeb7d2}
+  .dash-shell{
+    display:grid;
+    grid-template-columns:270px 1fr;
+    background:white;
+    color:var(--ink);
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 30px 80px rgba(0,0,0,.28);
+  }
+  .dash-side{
+    background:#f1f4fb;
+    border-right:1px solid var(--line);
+    padding:26px 20px;
+  }
+  .student{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    padding-bottom:20px;
+    border-bottom:1px solid var(--line);
+    margin-bottom:20px;
+  }
+  .side-link{
+    width:100%;
+    text-align:left;
+    background:transparent;
+    padding:11px 14px;
+    border-radius:12px;
+    font-weight:600;
+    color:var(--muted);
+    margin-bottom:6px;
+    transition:.2s;
+  }
+  .side-link:hover{background:#e6ebf7;color:var(--primary)}
+  .side-link.active{
+    background:var(--primary);
+    color:white;
+  }
+  .dash-main{padding:28px}
+  .dash-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+    margin-bottom:24px;
+  }
+  .dash-top h3{font-size:1.3rem}
+  .dash-top p{color:var(--muted);font-size:.9rem}
+  .dash-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+  }
+  .metric{
+    background:var(--bg);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:20px;
+  }
+  .metric span{
+    font-size:.82rem;
+    color:var(--muted);
+    font-weight:600;
+  }
+  .metric b{
+    display:block;
+    font-size:1.65rem;
+    margin-top:6px;
+  }
+  .panel{
+    margin-top:18px;
+    background:var(--bg);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:22px;
+  }
+  .panel h4{margin-bottom:14px}
+  .task{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:14px;
+    background:white;
+    border:1px solid var(--line);
+    padding:13px 15px;
+    border-radius:12px;
+    margin-bottom:10px;
+  }
+  .task small{display:block;color:var(--muted)}
+  .task button{
+    background:var(--soft-teal);
+    color:var(--teal);
+    padding:8px 14px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:.8rem;
+  }
+  .task.done{opacity:.6}
+  .task.done strong{text-decoration:line-through}
+  .empty{
+    color:var(--muted);
+    font-size:.92rem;
+  }
+
+  /* Enrollment */
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:start;
+  }
+  .form-card{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:24px;
+    padding:30px;
+    box-shadow:var(--shadow);
+  }
+  .field{margin-bottom:16px}
+  label{
+    display:block;
+    font-weight:600;
+    font-size:.88rem;
+    margin-bottom:7px;
+  }
+  input,select,textarea{
+    width:100%;
+    padding:13px 15px;
+    border:1.5px solid var(--line);
+    border-radius:12px;
+    background:var(--bg);
+    outline:none;
+    transition:.2s;
+  }
+  input:focus,select:focus,textarea:focus{
+    border-color:var(--primary);
+    background:white;
+    box-shadow:0 0 0 4px rgba(29,63,184,.10);
+  }
+  .form-note{
+    font-size:.82rem;
+    color:var(--muted);
+    margin-top:12px;
+  }
+  .success{
+    display:none;
+    margin-top:16px;
+    background:var(--soft-teal);
+    color:#06655b;
+    padding:14px;
+    border-radius:12px;
+    font-weight:600;
+  }
+
+  /* Footer */
+  footer{
+    background:#0d1330;
+    color:#aeb7d2;
+    padding:44px 0;
+  }
+  .footer-top{
+    display:flex;
+    justify-content:space-between;
+    gap:30px;
+    flex-wrap:wrap;
+    align-items:center;
+  }
+  footer .logo{color:white}
+  .footer-links{display:flex;gap:22px;flex-wrap:wrap}
+  .footer-links a:hover{color:white}
+  .copyright{
+    margin-top:26px;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.12);
+    font-size:.85rem;
+  }
+
+  /* Animations */
+  .reveal{
+    opacity:0;
+    transform:translateY(28px);
+    transition:.8s cubic-bezier(.2,.7,.2,1);
+  }
+  .reveal.visible{
+    opacity:1;
+    transform:none;
+  }
+  @keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-14px)}
+  }
+  @keyframes grow{
+    to{width:var(--w)}
+  }
+
+  /* Responsive */
+  @media(max-width:980px){
+    .hero-grid,
+    .contact-grid{grid-template-columns:1fr}
+    .grid-3,
+    .testimonial-grid{grid-template-columns:1fr}
+    .results-strip{grid-template-columns:1fr 1fr}
+    .dash-shell{grid-template-columns:1fr}
+    .dash-side{
+      border-right:none;
+      border-bottom:1px solid var(--line);
+    }
+    .dash-grid{grid-template-columns:1fr 1fr}
+    .nav-links{
+      position:fixed;
+      inset:70px 4% auto;
+      background:white;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:20px;
+      flex-direction:column;
+      align-items:flex-start;
+      box-shadow:var(--shadow);
+      display:none;
+    }
+    .nav-links.open{display:flex}
+    .menu-btn{display:grid;place-items:center}
+  }
+  @media(max-width:620px){
+    .hero{padding:54px 0}
+    section{padding:62px 0}
+    .dash-grid{grid-template-columns:1fr}
+    .mini-cards{grid-template-columns:1fr}
+    .results-strip{grid-template-columns:1fr}
+    .course{flex-direction:column;align-items:flex-start}
+    .dash-top{flex-direction:column;align-items:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <a href="#home" class="logo">
+      <span class="logo-mark">M</span>
+      MathwithMe
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#features">Why Us</a>
+      <a href="#courses">Classes & Fees</a>
+      <a href="#results">Results</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#enroll">Enroll</a>
+      <a href="#enroll" class="btn btn-primary">Book Free Demo</a>
+    </nav>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="reveal">
+        <span class="eyebrow">✦ Personalized math coaching in Paratwada</span>
+        <h1>Make math <span class="gradient-text">simple, strong</span> and stress-free.</h1>
+        <p>
+          MathwithMe offers personalized mathematics coaching in <strong>Paratwada</strong> for
+          Class 8, 9, and 10 students. Build strong concepts, improve exam scores, and track
+          progress through a dedicated student dashboard.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#enroll" class="btn btn-primary">Start Free Demo</a>
+          <a href="tel:+919325667226" class="btn btn-ghost">📞 Call 9325667226</a>
+          <a href="https://wa.me/919325667226" target="_blank" rel="noopener" class="btn btn-ghost">💬 WhatsApp</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat"><b>Class 8–10</b><span>Mathematics coaching</span></div>
+          <div class="stat"><b>Morning</b><span>8–9, 9–10, 10–11 AM</span></div>
+          <div class="stat"><b>Paratwada</b><span>Offline coaching</span></div>
+        </div>
+      </div>
+
+      <div class="hero-card reveal">
+        <div class="progress-head">
+          <h3>Weekly Progress</h3>
+          <span class="badge">On track</span>
+        </div>
+
+        <div class="subject">
+          <div class="subject-top"><span>Algebra</span><span>82%</span></div>
+          <div class="bar"><span style="--w:82%"></span></div>
+        </div>
+
+        <div class="subject">
+          <div class="subject-top"><span>Geometry</span><span>68%</span></div>
+          <div class="bar"><span style="--w:68%;animation-delay:.2s"></span></div>
+        </div>
+
+        <div class="subject">
+          <div class="subject-top"><span>Word Problems</span><span>74%</span></div>
+          <div class="bar"><span style="--w:74%;animation-delay:.4s"></span></div>
+        </div>
+
+        <div class="mini-cards">
+          <div class="mini-card"><b>12</b><span>Classes attended</span></div>
+          <div class="mini-card"><b>94%</b><span>Homework score</span></div>
+          <div class="mini-card"><b>A</b><span>Current grade</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>Coaching designed around your child</h2>
+        <p>MathwithMe combines concept clarity, regular practice, doubt-solving, and measurable progress for Class 8–10 students.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card reveal">
+          <div class="icon blue">📘</div>
+          <h3>Concept-First Teaching</h3>
+          <p>We explain the reasoning behind every method, so students can solve unfamiliar questions confidently.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="icon teal">🎯</div>
+          <h3>Personal Attention</h3>
+          <p>Small morning batches allow the teacher to identify gaps and guide every student individually.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="icon amber">📈</div>
+          <h3>Progress Dashboard</h3>
+          <p>Students can track practice tasks, attendance, scores, and improvement areas through the dashboard.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="courses" id="courses">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>Class timings & fees</h2>
+        <p>Structured morning batches in Paratwada for Class 8, 9, and 10 mathematics students.</p>
+      </div>
+
+      <div class="course-list">
+        <article class="course reveal">
+          <div>
+            <h3>Class 8 Mathematics</h3>
+            <p>Morning batch • 8:00 AM – 9:00 AM</p>
+          </div>
+          <div class="price">₹4,000 / month</div>
+        </article>
+
+        <article class="course reveal">
+          <div>
+            <h3>Class 9 Mathematics</h3>
+            <p>Morning batch • 9:00 AM – 10:00 AM</p>
+          </div>
+          <div class="price">₹4,500 / month</div>
+        </article>
+
+        <article class="course reveal">
+          <div>
+            <h3>Class 10 Mathematics</h3>
+            <p>Morning batch • 10:00 AM – 11:00 AM</p>
+          </div>
+          <div class="price">₹5,000 / month</div>
+        </article>
+      </div>
+
+      <div class="timing-note reveal">
+        <strong>📍 Location:</strong> Paratwada &nbsp;•&nbsp;
+        <strong>📞 Contact:</strong> 
+        <a href="tel:+919325667226">9325667226</a> &nbsp;•&nbsp;
+        <strong>💬 WhatsApp:</strong> 
+        <a href="https://wa.me/919325667226" target="_blank" rel="noopener">Chat on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="results">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>Student results & testimonials</h2>
+        <p>Real progress comes from consistent guidance, structured practice, and confidence. Here is what MathwithMe students and parents say.</p>
+      </div>
+
+      <div class="results-strip reveal">
+        <div class="result-card">
+          <b>96%</b>
+          <span>Students improved by at least one grade</span>
+        </div>
+        <div class="result-card">
+          <b>500+</b>
+          <span>Students coached</span>
+        </div>
+        <div class="result-card">
+          <b>4.9★</b>
+          <span>Average parent rating</span>
+        </div>
+        <div class="result-card">
+          <b>92%</b>
+          <span>Homework completion rate</span>
+        </div>
+      </div>
+
+      <div class="testimonial-grid">
+        <article class="testimonial reveal">
+          <div class="stars">★★★★★</div>
+          <blockquote>
+            “I used to fear algebra, but the step-by-step explanations made everything easier. My school test score improved from 68% to 91%.”
+          </blockquote>
+          <div class="testimonial-user">
+            <div class="avatar small">A</div>
+            <div>
+              <strong>Aarav Sharma</strong>
+              <small>Class 9 Student</small>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial reveal">
+          <div class="stars">★★★★★</div>
+          <blockquote>
+            “The weekly progress updates are excellent. We always know what our daughter is learning, practicing, and where she needs support.”
+          </blockquote>
+          <div class="testimonial-user">
+            <div class="avatar small">P</div>
+            <div>
+              <strong>Priya Mehta</strong>
+              <small>Parent of Class 8 Student</small>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial reveal">
+          <div class="stars">★★★★★</div>
+          <blockquote>
+            “MathwithMe made geometry and trigonometry much simpler. The practice sheets and doubt-solving sessions helped me score 95 in my final exam.”
+          </blockquote>
+          <div class="testimonial-user">
+            <div class="avatar small">R</div>
+            <div>
+              <strong>Rohan Verma</strong>
+              <small>Class 10 Student</small>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="dashboard" id="dashboard">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>Student Dashboard</h2>
+        <p>A working demo dashboard. Add practice tasks, mark them complete, and your progress is saved in the browser.</p>
+      </div>
+
+      <div class="dash-shell reveal">
+        <aside class="dash-side">
+          <div class="student">
+            <div class="avatar">A</div>
+            <div>
+              <strong>Aarav Sharma</strong>
+              <small>Class 9 • MathwithMe</small>
+            </div>
+          </div>
+
+          <button class="side-link active">📊 Overview</button>
+          <button class="side-link">📅 Schedule</button>
+          <button class="side-link">📝 Assignments</button>
+          <button class="side-link">🏆 Test Results</button>
+          <button class="side-link">💬 Teacher Notes</button>
+        </aside>
+
+        <div class="dash-main">
+          <div class="dash-top">
+            <div>
+              <h3>Welcome back, Aarav 👋</h3>
+              <p>You have <span id="pendingCount">0</span> pending practice tasks.</p>
+            </div>
+            <button class="btn btn-primary" id="clearTasks">Reset Demo</button>
+          </div>
+
+          <div class="dash-grid">
+            <div class="metric"><span>Attendance</span><b>92%</b></div>
+            <div class="metric"><span>Average Score</span><b>87%</b></div>
+            <div class="metric"><span>Practice Streak</span><b>8 days</b></div>
+          </div>
+
+          <div class="panel">
+            <h4>Add practice task</h4>
+            <div class="field">
+              <input id="taskInput" type="text" placeholder="Example: Solve 10 algebra questions" />
+            </div>
+            <button class="btn btn-primary" id="addTask">Add Task</button>
+          </div>
+
+          <div class="panel">
+            <h4>Today’s practice list</h4>
+            <div id="taskList"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="enroll">
+    <div class="container contact-grid">
+      <div class="reveal">
+        <h2 style="font-family:'Fraunces',serif;font-size:clamp(1.9rem,3.4vw,2.6rem)">
+          Book a free demo class in Paratwada
+        </h2>
+        <p style="color:var(--muted);margin-top:12px">
+          MathwithMe provides offline mathematics coaching in Paratwada for Class 8, 9,
+          and 10 students. Share your details and our team will contact you to schedule a
+          personalized demo session.
+        </p>
+
+        <div class="hero-stats" style="margin-top:34px">
+          <div class="stat"><b>8–11 AM</b><span>Morning batches</span></div>
+          <div class="stat"><b>Class 8–10</b><span>Mathematics</span></div>
+          <div class="stat"><b>9325667226</b><span>Call or WhatsApp</span></div>
+        </div>
+      </div>
+
+      <form class="form-card reveal" id="enrollForm">
+        <div class="field">
+          <label for="name">Student name</label>
+          <input id="name" required placeholder="Enter student name" />
+        </div>
+
+        <div class="field">
+          <label for="parent">Parent / guardian name</label>
+          <input id="parent" required placeholder="Enter parent name" />
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone number</label>
+          <input id="phone" type="tel" required placeholder="Enter phone number" />
+        </div>
+
+        <div class="field">
+          <label for="grade">Class / grade</label>
+          <select id="grade" required>
+            <option value="">Select class</option>
+            <option>Class 8</option>
+            <option>Class 9</option>
+            <option>Class 10</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="timing">Preferred batch timing</label>
+          <select id="timing" required>
+            <option value="">Select timing</option>
+            <option>8:00 AM – 9:00 AM</option>
+            <option>9:00 AM – 10:00 AM</option>
+            <option>10:00 AM – 11:00 AM</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="area">Area / locality in Paratwada</label>
+          <input id="area" placeholder="Example: Main Road, Market Area, Near School" />
+        </div>
+
+        <div class="field">
+          <label for="goal">Learning goal</label>
+          <textarea id="goal" rows="3" placeholder="Example: Improve algebra and prepare for school exams"></textarea>
+        </div>
+
+        <button class="btn btn-primary" type="submit" style="width:100%">Request Demo Class</button>
+
+        <div class="success" id="formSuccess">
+          ✅ Thank you! Your demo request has been recorded.
+        </div>
+
+        <p class="form-note">This demo form saves the request locally in your browser.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <a href="#home" class="logo">
+        <span class="logo-mark">M</span>
+        MathwithMe
+      </a>
+
+      <div class="footer-links">
+        <a href="#features">Why Us</a>
+        <a href="#courses">Classes & Fees</a>
+        <a href="#results">Results</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#enroll">Enroll</a>
+      </div>
+    </div>
+
+    <div class="copyright">
+      © <span id="year"></span> MathwithMe, Paratwada. Personalized math coaching for confident learners.
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  const menuBtn = document.getElementById("menuBtn");
+  const navLinks = document.getElementById("navLinks");
+
+  menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+  });
+
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => navLinks.classList.remove("open"));
+  });
+
+  // Scroll reveal animation
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold:.15});
+
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+  // Dashboard tasks
+  const taskInput = document.getElementById("taskInput");
+  const addTask = document.getElementById("addTask");
+  const taskList = document.getElementById("taskList");
+  const pendingCount = document.getElementById("pendingCount");
+  const clearTasks = document.getElementById("clearTasks");
+
+  let tasks = JSON.parse(localStorage.getItem("mathwithme_tasks") || "[]");
+
+  function saveTasks(){
+    localStorage.setItem("mathwithme_tasks", JSON.stringify(tasks));
+  }
+
+  function renderTasks(){
+    taskList.innerHTML = "";
+
+    if(tasks.length === 0){
+      taskList.innerHTML = `<p class="empty">No practice tasks yet. Add one above to get started.</p>`;
+    }
+
+    tasks.forEach((task, index) => {
+      const div = document.createElement("div");
+      div.className = "task" + (task.done ? " done" : "");
+      div.innerHTML = `
+        <div>
+          <strong>${task.text}</strong>
+          <small>${task.done ? "Completed" : "Pending"}</small>
+        </div>
+        <button data-index="${index}">${task.done ? "Undo" : "Mark Done"}</button>
+      `;
+      taskList.appendChild(div);
+    });
+
+    const pending = tasks.filter(task => !task.done).length;
+    pendingCount.textContent = pending;
+  }
+
+  addTask.addEventListener("click", () => {
+    const text = taskInput.value.trim();
+    if(!text) return;
+
+    tasks.push({text, done:false});
+    taskInput.value = "";
+    saveTasks();
+    renderTasks();
+  });
+
+  taskInput.addEventListener("keydown", event => {
+    if(event.key === "Enter") addTask.click();
+  });
+
+  taskList.addEventListener("click", event => {
+    if(event.target.tagName !== "BUTTON") return;
+    const index = event.target.dataset.index;
+    tasks[index].done = !tasks[index].done;
+    saveTasks();
+    renderTasks();
+  });
+
+  clearTasks.addEventListener("click", () => {
+    tasks = [];
+    saveTasks();
+    renderTasks();
+  });
+
+  renderTasks();
+
+  // Enrollment form
+  const enrollForm = document.getElementById("enrollForm");
+  const formSuccess = document.getElementById("formSuccess");
+
+  enrollForm.addEventListener("submit", event => {
+    event.preventDefault();
+
+    const request = {
+      name: document.getElementById("name").value,
+      parent: document.getElementById("parent").value,
+      phone: document.getElementById("phone").value,
+      grade: document.getElementById("grade").value,
+      timing: document.getElementById("timing").value,
+      area: document.getElementById("area").value,
+      goal: document.getElementById("goal").value,
+      date: new Date().toLocaleString()
+    };
+
+    const requests = JSON.parse(localStorage.getItem("mathwithme_requests") || "[]");
+    requests.push(request);
+    localStorage.setItem("mathwithme_requests", JSON.stringify(requests));
+
+    formSuccess.style.display = "block";
+    enrollForm.reset();
+
+    setTimeout(() => {
+      formSuccess.style.display = "none";
+    }, 5000);
+  });
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
